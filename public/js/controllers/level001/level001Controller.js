@@ -10,7 +10,20 @@ angular.module('watchsometvController', []).controller('watchsometvController', 
 
 angular.module('eatsomefoodController', []).controller('eatsomefoodController', function($scope) {
    
-    $scope.formData = 'dfsf';
+    $scope.formData = {};
+
+    $scope.submitForm = function() {
+      if($scope.formData.name == 'pizza' || $scope.formData.name == 'okonomiyaki') {
+
+          // alert('correct');
+          $('.prize').show();
+      } else {
+        alert('nope')
+      }
+        // var trouble = $scope.formData;
+        // if($scope.fromData == $scope.formData) {
+        // }
+    };
 });
 
 

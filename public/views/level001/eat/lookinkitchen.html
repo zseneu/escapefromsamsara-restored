@@ -1,13 +1,13 @@
 <div class="canvas-element" ng-controller="eatsomefoodController">
   <!-- FORM -->
-  <form>
+  <form ng-submit="submitForm()" >
     <!-- NAME -->
 
 
     <!-- SUPERHERO NAME -->
+      <h1 class="question">What is the name of the national dish this recipee approximates.</h1>
     <div id="superhero-group" class="form-group">
-      <label>What is approximation of a national dish called.</label>
-      <input ng-model="formData.name" type="text" name="superheroAlias" class="form-control" placeholder="Caped Crusader">
+      <input  type="text" name="superheroAlias" class="form-control" placeholder="answer goes here" ng-model="formData.name">
       <span class="help-block"></span>
     </div>
 
@@ -16,5 +16,9 @@
       <span class="glyphicon glyphicon-flash"></span> Submit!
     </button>
   </form>
-  <pre>{{formData}}
+  <pre>{{formData}}</pre>
+
+  <div class="prize">
+    you win chopsticks and a file
+  </div>
 </div>
