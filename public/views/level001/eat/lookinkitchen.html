@@ -1,49 +1,20 @@
-<h1>What book am I thinking about</h1>
+<div class="canvas-element" ng-controller="eatsomefoodController">
+  <!-- FORM -->
+  <form>
+    <!-- NAME -->
 
-<div class="row">
-<h1>That wasn't in the spec</h1>
+
+    <!-- SUPERHERO NAME -->
+    <div id="superhero-group" class="form-group">
+      <label>What is approximation of a national dish called.</label>
+      <input ng-model="formData.name" type="text" name="superheroAlias" class="form-control" placeholder="Caped Crusader">
+      <span class="help-block"></span>
+    </div>
+
+    <!-- SUBMIT BUTTON -->
+    <button type="submit" class="btn btn-success btn-lg btn-block">
+      <span class="glyphicon glyphicon-flash"></span> Submit!
+    </button>
+  </form>
+  <pre>{{formData}}
 </div>
-  <div class="row">
-    <div class="eight columns">
-  <br/>
-  <br/>
-         <div class="row taskList">
-      <ul>
-      <li>
-        <div class="nine columns task">
-          <div class="edit">..I hope I can bill for this</div>
-        </div>
-        <div class="three columns time">
-          <div class="timer"></div>
-        </div>
-      </li>
-      </ul>
-     </div>
-     <br/>
-     <br/>
-     <div class="row doneList">
-      <ul>
-        
-      </ul>
-     </div>
-     
-    </div>
-
-    <div class="four columns">
-    <p><a href="#" class="success button" id="done">Go!</a></p>
-    
-    <p>Ever had a client that just wanted a couple of 'tiny' little changes?</p>
-
-    <p>In the blink of an eye, you have ten files open, have edited 50 lines of css and written a custom javascript function.</p>
-
-    <p>This handy widget will let you record those changes as you make them.</p>
-
-    <ul>
-    <li>Begin each task by writing it in the box.</li>
-    <li>Now get on with your work</li>
-    <li>As soon as the task is done hit the green button</li>
-    </ul>
-    <p>Your times will be recorded in the browser</p> 
-    </div>
-  </div>
-

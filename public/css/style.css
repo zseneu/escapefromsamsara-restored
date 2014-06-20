@@ -75,5 +75,16 @@ body                            {  }
 }
 
 body{
-  background:red;
+  background:green;
 }
+
+
+a {color:gold;}
+
+.canvas-element {
+  width:600px;
+  height:450px;
+  background:url('../images/views/level001.eat.jpg');
+}
+
+

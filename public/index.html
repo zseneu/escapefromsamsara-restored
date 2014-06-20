@@ -30,8 +30,8 @@
 <body><base href="/">
 
 <!-- MAIN CONTENT -->
-<div class="container">
-  <div class="row">
+<div class="container" ng-app="escapeApp">
+  <div class="row" ng-controller="level001Controller">
     <div class="col-sm-4"> 
       <nav class="navbar navbar-inverse" role="navigation">
         <div class="navbar-header">
@@ -43,23 +43,26 @@
         </ul>
       </nav>
 
-      <section ng-app="escapeApp">
-        <article ng-controller="level001Controller"> <!-- to what is extent is it more semantic to use article for ng items and keep the div tag purely presentaion -/ -->
+      <section >
+        <article > <!-- to what is extent is it more semantic to use article for ng items and keep the div tag purely presentaion -/ -->
         <nav></ul>
           <li><a ui-sref="smoke">Smoke some pot.</a></li> 
           <li><a ui-sref="eat">Look in kitchen</a></li>
           <li><a ui-sref="consume">Watch some tv.</a></li>
         </nav></ul>
+      </section>
+    </div>
+    <div class="col-sm-8">
         <section ui-view>
 
         </section>
             {{dostuff}}
 
         </article>
-      </section>
-    </div><!-- end ng-app="escapeApp" -->
+    </div>
 
 </div>
+    </div><!-- end ng-app="escapeApp" -->
    
   <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== 
   you use possesions to adjust your health. 
