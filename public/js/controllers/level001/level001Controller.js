@@ -1,4 +1,4 @@
-angular.module('level001Controller', []).controller('level001Controller', function($scope, $http) {
+angular.module('level001Controller', ['eatsomefoodController']).controller('level001Controller', function($scope, $http) {
    
     $scope.dostuff = 'take some e';
 });
