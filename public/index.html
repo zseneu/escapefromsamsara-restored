@@ -1,0 +1,93 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html   >
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Escape from Samsara</title>
+
+	<!-- SCROLLS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="css/style.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="css/font-awesome-4.1.0/css/font-awesome.min.css">
+
+	<!-- SPELLS -->
+	<script src="libs/angular.min.js"></script><!-- load angular -->
+  <script src="libs/angular-ui-router.min.js"></script>
+
+  <!-- // <script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<!-- // <script src="js/controllers/statusController.js"></script> <!-- load up our controller -->
+  <script src="js/controllers/level001/level001Controller.js"></script>
+	<!-- // <script src="js/services/todos.js"></script> <!-- load our todo service  -->
+	<script src="js/core.js"></script> <!-- load our main application -->
+
+</head>
+<!-- SET THE CONTROLLER -->
+<!-- NAVIGATION -->
+<body><base href="/">
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"> 
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            Escape from Samsara<!-- <a class="navbar-brand" ui-sref="#">Escape from Samsara</a> -->
+        </div>
+        <ul class="nav navbar-nav">
+            <!-- <li><a ui-sref="home">Home</a></li> -->
+            <!-- <li><a ui-sref="about">About</a></li> -->
+        </ul>
+      </nav>
+
+      <section ng-app="escapeApp">
+        <article ng-controller="level001Controller"> <!-- to what is extent is it more semantic to use article for ng items and keep the div tag purely presentaion -/ -->
+        <nav></ul>
+          <li><a ui-sref="smoke">Smoke some pot.</a></li> 
+          <li><a ui-sref="eat">Look in kitchen</a></li>
+          <li><a ui-sref="consume">Watch some tv.</a></li>
+        </nav></ul>
+        <section ui-view>
+
+        </section>
+            {{dostuff}}
+
+        </article>
+      </section>
+    </div><!-- end ng-app="escapeApp" -->
+
+</div>
+   
+  <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== 
+  you use possesions to adjust your health. 
+  you obtain possesions in mini games
+  you need your health to complete puzzles
+
+  puzzle1 
+    you have .02g cannabis. papers. a laptop. 1 ciggarette
+    you must survive the world cup
+    there are four people in the room
+    
+    you must mix two cigarettes. take a vote about whether to smoke at once or in two joint
+      if you smoke it all in one joint you cant work [money:null, weed:-.01, self-esteem:-1]
+
+
+  Your itenery is a model that will demonstate crud principles
+
+  Each level will have it's own controller and all level's will be routed via a level controller. 
+
+  Each level will then have is own angular.ui state controller, which will route the user to a number
+  of mini games and plot development options.
+
+  In level one the player will learn to add items to ver itenery. 
+
+  The object of each level is to repay your hotel bill so you can escape to the next destination. At the end of each level you be able to unlock a bonus
+  alternative ending where you redectorate the room. 
+
+  ========================================================================== -->
+</div>
+</body>
+</html>
