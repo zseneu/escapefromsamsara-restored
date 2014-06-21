@@ -4,7 +4,7 @@ var app      = express(); 								// create our app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
 var port  	 = process.env.PORT || 3000; 				// set the port
 var database = require('./config/database'); 			// load the database config
-
+var mailer = require('express-mailer');
 // configuration ===============================================================
 // mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
 
@@ -13,9 +13,21 @@ app.configure(function() {
 	app.use(express.logger('dev')); 						// log every request to the console
 	app.use(express.bodyParser()); 							// pull information from html in POST
 	app.use(express.methodOverride()); 						// simulate DELETE and PUT
+  app.set('views', __dirname + '/app/views');
+  app.set('view engine', 'jade');
 });
 
-
+mailer.extend(app, {
+  from: 'adhira.vriddhi@gmail.com',
+  host: 'smtp.gmail.com', // hostname
+  secureConnection: true, // use SSL
+  port: 465, // port for secure SMTP
+  transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
+  auth: {
+    user: 'adhira.vriddhi@gmail.com',
+    pass: 'humility64'
+  }
+});
 // routes ======================================================================
 app.use(express.bodyParser());
 require('./app/routes.js')(app);
@@ -35,19 +47,35 @@ app.get('/formhandler', function(req,res){
 //   // var q = quotes[id];
 //   res.json('this is correct');
 // });
-app.get('/formhandler/:id', function(req,res){
+app.get('/formhandler/:id', function(req,res,next){
     var bookAttempt = req.params.id;
-  if(req.params.id == 'inversions') {
-    console.log(bookAttempt);
-    return res.send({answer:'correct',url:'images/views/hdsfkjhaklhfsjafkljs.png'});
-  } else {
-    return res.send({answer:'incorrect',url:'something else',attempt:bookAttempt});
-  }
+  app.mailer.send('email', {
+    to: 'adhira.vriddhi@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field. 
+    subject: bookAttempt , // REQUIRED.
+    otherProperty: 'Other Property' // All additional properties are also passed to the template as local variables.
+  }, function (err) {
+    if (err) {
+      // handle error
+      console.log('this is an '+err);
+      res.send('There was an error sending the email');
+      return;
+    }
+    if(req.params.id == 'inversions') {
+      console.log(bookAttempt);
+      return res.send({answer:'correct',url:'images/views/hdsfkjhaklhfsjafkljs.png'});
+    } else {
+      return res.send({answer:'incorrect',url:'something else',attempt:bookAttempt});
+    }
+  });
   // return res.send('Error 404: No quote found');
   // }  
   // var q = quotes[req.params.id];
   // res.json(q);
 });
+
+
+
+
 
 
 // listen (start app with node server.js) ======================================
