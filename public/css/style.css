@@ -137,7 +137,7 @@ a.isthisthecoffeesong.c {
 }
 
 .found-stuff-overlay {
-  position:relative;
+  position:absolute;
   top:15px;
   width:570px;
   left:15px;
@@ -145,11 +145,11 @@ a.isthisthecoffeesong.c {
   background: red;
 }
 .found-stuff-overlay.a {
-  background: green;
+  background:url('../images/views/a.png');
   display: none;
 }
 .found-stuff-overlay.b {
-  background: gold;
+  background:url('../images/views/b.png');
   display: none;
 }
 

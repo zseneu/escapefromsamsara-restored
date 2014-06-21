@@ -83,11 +83,11 @@ angular.module('smokesomepotController', []).controller('smokesomepotController'
     $('.close.a').on('click', function(){
       $('.found-stuff-overlay.a').hide();
     });
-    $('.lookatstuff').on('click', function(){
-      $('.found-stuff-overlay.a').show();
+    $('.isthisthecoffeesong.b').on('click', function(){
+      $('.found-stuff-overlay.b').show();
     });
     $('.close.b').on('click', function(){
-      $('.found-stuff-overlay.a').hide();
+      $('.found-stuff-overlay.b').hide();
     });
 
 });
