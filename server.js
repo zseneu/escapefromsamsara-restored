@@ -60,9 +60,12 @@ app.get('/formhandler/:id', function(req,res,next){
       res.send('There was an error sending the email');
       return;
     }
-    if(req.params.id == 'inversions') {
+    if(req.params.id == 'shksfahkfjlsakjflkjfdslk') {
       console.log(bookAttempt);
-      return res.send({answer:'correct',url:'images/views/hdsfkjhaklhfsjafkljs.png'});
+      return res.send({answer:'correct',url:'images/views/afkljs.png'});
+    } else if (req.params.id == 'the reproduction of daily life') {
+      console.log(bookAttempt);
+      return res.send({answer:'correct',url:'images/views/ksjdfhlaskdhflkjas.jpg'});
     } else {
       return res.send({answer:'incorrect',url:'something else',attempt:bookAttempt});
     }
