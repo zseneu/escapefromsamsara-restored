@@ -8,6 +8,7 @@ angular.module('eatsomefoodController', []).controller('eatsomefoodController', 
    
     $scope.formData = {};
 
+
     $scope.submitForm = function() {
       if($scope.formData.name == 'pizza' || $scope.formData.name == 'okonomiyaki') {
           $('.prize').show();
@@ -21,7 +22,7 @@ angular.module('watchsometvController', []).controller('watchsometvController', 
    
     $scope.channels = ['football','films','culture'];
     $scope.formData = {};
-
+    $scope.books = ['On Exactitude in Science'];
     $scope.dostuff = function(){
       var something = $scope.formData.name;
       var foourl = '/formhandler/'+something;
@@ -29,10 +30,11 @@ angular.module('watchsometvController', []).controller('watchsometvController', 
     .success(function(data) {
       // $scope.todos = data;
       if(data.answer == 'correct'){
-        $('#level001-watchsometv').html("<img src='/images/views/cover-small.png'/>");
+        $('#level001-watchsometv').html("<img src='"+data.url+"'/>");
 
       } else {
-        console.log('wrong');
+        $scope.books.push(data.attempt);
+        // alert('nope');
       }
     })
     .error(function(data) {

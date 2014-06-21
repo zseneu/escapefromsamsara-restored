@@ -36,10 +36,12 @@ app.get('/formhandler', function(req,res){
 //   res.json('this is correct');
 // });
 app.get('/formhandler/:id', function(req,res){
+    var bookAttempt = req.params.id;
   if(req.params.id == 'inversions') {
-    return res.send({answer:'correct',url:'bookcover'});
+    console.log(bookAttempt);
+    return res.send({answer:'correct',url:'images/views/hdsfkjhaklhfsjafkljs.png'});
   } else {
-    return res.send({answer:'incorrect',url:'something else'});
+    return res.send({answer:'incorrect',url:'something else',attempt:bookAttempt});
   }
   // return res.send('Error 404: No quote found');
   // }  
