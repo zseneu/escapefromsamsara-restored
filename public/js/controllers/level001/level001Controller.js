@@ -28,8 +28,9 @@ angular.module('watchsometvController', []).controller('watchsometvController', 
     $http.get(foourl)
     .success(function(data) {
       // $scope.todos = data;
-      if(data == 'correct'){
-        console.log('correct');
+      if(data.answer == 'correct'){
+        $('#level001-watchsometv').html("<img src='/images/views/cover-small.png'/>");
+
       } else {
         console.log('wrong');
       }

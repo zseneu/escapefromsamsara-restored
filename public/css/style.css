@@ -82,11 +82,13 @@ body{
 a {color:gold;}
 
 .canvas-element {
+  padding:60px;
   width:600px;
   height:450px;
-  background:url('../images/views/level001.eat.jpg');
+  /*background:url('../images/views/level001.eat.jpg');*/
   position:relative;
 }
+h1 {color:white;}
 
 .prize{
 
@@ -97,5 +99,11 @@ position:absolute;
 top:249px;
 left:19px;
 display: none;
+}
+#level001-eatsomefood {
+  background:url('../images/views/level001.eat.jpg');
+}
+#level001-watchsometv {
+  background:url('../images/views/level001.watchtv.jpg');
 }
 

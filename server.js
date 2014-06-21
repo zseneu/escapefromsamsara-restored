@@ -37,9 +37,9 @@ app.get('/formhandler', function(req,res){
 // });
 app.get('/formhandler/:id', function(req,res){
   if(req.params.id == 'inversions') {
-    return res.send('correct');
+    return res.send({answer:'correct',url:'bookcover'});
   } else {
-    return res.send('incorrect');
+    return res.send({answer:'incorrect',url:'something else'});
   }
   // return res.send('Error 404: No quote found');
   // }  

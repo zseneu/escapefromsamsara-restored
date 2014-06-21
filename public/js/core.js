@@ -1,11 +1,11 @@
-var escapeApp=angular.module('escapeApp', ['ui.router','level001Controller']);
+var escapeApp = angular.module('escapeApp', ['ui.router','level001Controller']);
 // angular.module('scotchTodo', []);
 escapeApp.config(function($stateProvider, $urlRouterProvider, $uiViewScrollProvider,$anchorScrollProvider) {
     
     $urlRouterProvider.otherwise('/level');
     $uiViewScrollProvider.useAnchorScroll();
     $anchorScrollProvider.disableAutoScrolling();
-    
+
     $stateProvider
     .state('eat', {
         url: '/eat',
