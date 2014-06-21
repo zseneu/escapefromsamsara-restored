@@ -1,2 +1,18 @@
+<div class="canvas-element" ng-controller="watchsometvController">
 <h1>You watch some tv</h1>
 <h2>{{channels}}</h2>
+<h3>do you decide to read a book instead</h3>
+  <form  enctype="application/x-www-form-urlencoded">
+    <!-- NAME -->
+    <div id="superhero-group" class="form-group">
+      <input type="text" name="superheroAlias" class="form-control" placeholder="answer goes here" ng-model="formData.name">
+      <span class="help-block"></span>
+    </div>
+
+    <!-- SUBMIT BUTTON -->
+    <button type="submit" class="btn btn-success btn-lg btn-block" ng-click="dostuff()">
+      <span class="glyphicon glyphicon-flash"></span> Submit!
+    </button>
+  </form>
+  <pre>{{formData}}</pre>
+</div>

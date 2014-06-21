@@ -1,4 +1,4 @@
-var escapeApp=angular.module('escapeApp', [   'ui.router','level001Controller', 'watchsometvController']);
+var escapeApp=angular.module('escapeApp', ['ui.router','level001Controller']);
 // angular.module('scotchTodo', []);
 escapeApp.config(function($stateProvider, $urlRouterProvider, $uiViewScrollProvider,$anchorScrollProvider) {
     
