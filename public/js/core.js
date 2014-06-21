@@ -11,16 +11,34 @@ escapeApp.config(function($stateProvider, $urlRouterProvider, $uiViewScrollProvi
         url: '/eat',
         templateUrl: '/views/level001/eat/lookinkitchen.html', // this can be in injected with a variable later 
     })
-    .state('smoke', {
-        url: '/smoke',
-        templateUrl: '/views/level001/smoke/smokesomepot.html', // this can be in injected with a variable later 
-    })
     .state('consume', {
         url: '/consume',
         templateUrl: '/views/level001/consume/watchsometv.html', // this can be in injected with a variable later 
         controller: 'watchsometvController',
+    })
+    .state('smoke', {
+        url: '/smoke',
+        templateUrl: '/views/level001/smoke/smokesomepot.html', // this can be in injected with a variable later 
+        controller: 'smokesomepotController',
+    })
+    .state('smoke.some', {
+        url: '/some',
+        // templateUrl: '/views/level001/consume/watchsometv.html',
+        controller: 'smokeCtrl',
+        controller: function($scope) {
+            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+        }
     });
 
+  // // nested list with just some random string data
+  //   .state('smoke.mescaline', {
+  //       url: '/eat',
+  //       template: 'I could sure use a drink right now.'
+  //   })
+  //   .state('smoke.tobacco', {
+  //       url: '/eat',
+  //       template: 'I could sure use a drink right now.'
+  //   });
 });
 
 //         // // nested list with just some random string data

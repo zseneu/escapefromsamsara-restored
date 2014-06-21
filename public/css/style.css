@@ -144,6 +144,14 @@ a.isthisthecoffeesong.c {
   height:420px;
   background: red;
 }
+.found-stuff-overlay.a {
+  background: green;
+  display: none;
+}
+.found-stuff-overlay.b {
+  background: gold;
+  display: none;
+}
 
 
 

@@ -67,43 +67,47 @@ angular.module('watchsometvController', []).controller('watchsometvController', 
 });
 
 angular.module('smokesomepotController', []).controller('smokesomepotController', function($scope) {
-   
-    $scope.formData = {};
 
+    // $scope.foo = 'foo';
 
-    $scope.submitForm = function() {
-      if($scope.formData.name == 'pizza' || $scope.formData.name == 'okonomiyaki') {
-          $('.prize').show();
-      } else {
-        alert('nope')
-      }
-    };
-
-
+    // $scope.submitForm = function() {
+    //   if($scope.formData.name == 'pizza' || $scope.formData.name == 'okonomiyaki') {
+    //       $('.prize').show();
+    //   } else {
+    //     alert('nope')
+    //   }
+    // };
+    $('.lookatstuff').on('click', function(){
+      $('.found-stuff-overlay.a').show();
+    });
+    $('.close.a').on('click', function(){
+      $('.found-stuff-overlay.a').hide();
+    });
+    $('.lookatstuff').on('click', function(){
+      $('.found-stuff-overlay.a').show();
+    });
+    $('.close.b').on('click', function(){
+      $('.found-stuff-overlay.a').hide();
+    });
 
 });
 
-// ilikeweed.config(function($stateProvider, $urlRouterProvider, $uiViewScrollProvider,$anchorScrollProvider) {
-    
-//     // $urlRouterProvider.otherwise('/level');
-//     $uiViewScrollProvider.useAnchorScroll();
-//     $anchorScrollProvider.disableAutoScrolling();
+angular.module('smokeCtrl', ['smokeCtrl']).controller('smokeCtrl', function($scope) {
 
-//     $stateProvider
-//     .state('eat', {
-//         url: '/eat',
-//         templateUrl: '/views/level001/eat/lookinkitchen.html', // this can be in injected with a variable later 
-//     })
-//     .state('smoke', {
-//         url: '/smoke',
-//         templateUrl: '/views/level001/smoke/smokesomepot.html', // this can be in injected with a variable later 
-//     })
-//     .state('consume', {
-//         url: '/consume',
-//         templateUrl: '/views/level001/consume/watchsometv.html', // this can be in injected with a variable later 
-//         controller: 'watchsometvController',
-//     });
-// });
+    $scope.foo = 'smoking ctrl';
+
+    // $scope.submitForm = function() {
+    //   if($scope.formData.name == 'pizza' || $scope.formData.name == 'okonomiyaki') {
+    //       $('.prize').show();
+    //   } else {
+    //     alert('nope')
+    //   }
+    // };
+
+});
+
+          
+
 
 
 
