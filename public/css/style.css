@@ -110,7 +110,43 @@ display: none;
   background:url('../images/views/level001.lookatcomputer.png');
   /*background:url('../images/views/level001-smokesomepot01.png');*/
   /*background:url('../images/views/level001-smokesomepot01.png');*/
+  position:relative;
 }
+
+a.isthisthecoffeesong {
+  position:relative;
+  height:100px;
+  width:100px;
+  display: block;
+}
+a.isthisthecoffeesong.a {
+  background:red;
+    top:100px;
+  left:100px;
+}
+a.isthisthecoffeesong.b {
+  background:gold;
+    top:100px;
+  left:200px;
+  color:red;
+}
+a.isthisthecoffeesong.c {
+  background:green;
+    top:200px;
+  left:100px;
+}
+
+.found-stuff-overlay {
+  position:relative;
+  top:15px;
+  width:570px;
+  left:15px;
+  height:420px;
+  background: red;
+}
+
+
+
 
 
 ul.doneList, ul.taskList {list-style:none;}
