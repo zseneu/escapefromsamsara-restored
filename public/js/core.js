@@ -49,7 +49,7 @@ angular.module('itemsController', []).controller('itemsController', function($sc
 
   
 });
-angular.module('healthController', []).controller('healthController', function($scope) {
+var healthController = angular.module('healthController', []).controller('healthController', function($scope) {
    
     $scope.information = 'this will contain health info';
     $scope.healths = [
@@ -84,8 +84,10 @@ var gameBoardController = angular.module('gameBoardController', ['ui.router']).c
       }
     ];
     $scope.findaplant = function(){
-      alert('you found a plant using a controller');
+      $scope.information = "you find a plant with a controller";
     } // remember that angular overrides links and buttons are better
+    // angular models are controller specific and do not relate to api models?
+
 
 });
 
