@@ -45,6 +45,8 @@ angular.module('plotController', []).controller('plotController', function($scop
 angular.module('itemsController', []).controller('itemsController', function($scope) {
    
     $scope.information = 'this will contain the items you have collected';
+    // index=1 ">001</a> // needs a higher scope for click handler?
+
   
 });
 angular.module('healthController', []).controller('healthController', function($scope) {
@@ -81,6 +83,10 @@ var gameBoardController = angular.module('gameBoardController', ['ui.router']).c
       "class" : 'action-exercise',
       }
     ];
+    $scope.findaplant = function(){
+      alert('you found a plant using a controller');
+    } // remember that angular overrides links and buttons are better
+
 });
 
 

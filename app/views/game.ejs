@@ -67,21 +67,27 @@
               <article class="canvas-module" ng-controller="gameBoardController">
                 <div class="room-001 action-default" />
                   <h1>{{information}}</h1>
-                  <a href="#" class="findaplant click">Find a plant.</a>
+                  <button class="findaplant click">Find a plant.</button>
                   <a href="#" class="stopforsmoke click">Stop for smoke.</a>
                   <a href="#" class="hitawall click">Hit a wall.</a>
                   <div class="item plant">Plant</div><!-- switching between langauges helps you think -->
+                      <p ng-show="true">This paragraph is visible.</p>
+    <p ng-show="false">This paragraph is hidden.</p> 
+    <p>i think a click handler can have its own controller</p>
+<button ng-click="findaplant()">find a plant with a controller</button>
+
+
                   <script>
                     $(function(){ // Loads javascript after page 
 
 // var findaplant = function(input){ // accepts a plant
-  $('.findaplant').on('click', function(){
-    alert('you found a'+fireflower);
-    // pollon++
-  });
+//   $('.findaplant').on('click', function(){
+//     alert('you found a'+fireflower);
+//     // pollon++
+//   });
 // }
 
-findaplant('fireflower'); //stopforsmoke('function');
+// findaplant('fireflower'); //stopforsmoke('function');
 // var stopforsmoke = function(input){ // accepts a class
 //   $(input).on('click', function(){
 //     alert('you smoke some hash');
@@ -101,7 +107,7 @@ findaplant('fireflower'); //stopforsmoke('function');
 // }
 
 
-}
+});
 
 
                   </script>
