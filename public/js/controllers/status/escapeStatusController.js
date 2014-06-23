@@ -1,10 +1,27 @@
-// angular.module('escapeStatus', []).controller('escapeStatus', function($scope) {
+angular.module('escapeStatusController', []).controller('escapeStatusController', function($scope) {
    
-//     $scope.level_1 = [
-//         {
-//             text: "your at home bored",
-//             actions: ['smoke pot','do some work','check your phone','read'],
-            
+$scope.periodic = {
+ elements: [
+ {
+   "name" : "engine oil",
+   "temperature": 0,
+   "supply": 1,
+   "viscosity" : 1
+ },
+  {
+   "name" : "hashish",
+   "supply": 1,
+ },
+  {
+   "name" : "polloncount",
+   "supply": 1,
+ },
+  {
+   "name" : "coffee",
+   "texture": 0,
+ },
+ ]
 
-//         },
-//     ];
+ };
+
+});

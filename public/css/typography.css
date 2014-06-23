@@ -1,0 +1,280 @@
+/**
+ * Skin
+ */
+
+
+.mobile-header-row {
+  width:100%;
+  background:#ccc;
+  padding:15px;
+  display: block;
+  float: left;
+  box-sizing: border-box;
+}
+header#header .mobile-logo.logo {
+text-decoration: none;
+overflow: hidden;
+float:left;
+display: block;
+}
+
+h1.logo.mobile-logo {
+  display: inline;
+  font-size: 0;
+  float: left;
+}
+
+.mobile-header-row .links{
+  text-transform: uppercase;
+  font-size: 20px;
+  float:right;
+}
+.mobile-header-row .links .fa {
+  margin-right:10px;
+}
+
+.mobile-header-row .nav-container {
+  width: 100%;
+}
+.mobile-header-row .nav-wide li {
+  display: block;
+  float: left;
+  width: 100%;
+}
+.hide-by-default-mobile-menu {
+  display: none;
+}
+
+
+/* Front page */
+
+.home-article-heading {
+font-size: 1.09em;
+line-height: normal;
+font-weight: bold;
+margin-bottom: 9px;
+}
+
+
+.home-article-item, .home-article-list-item. .home-article-list-item-span 
+.article-item, .article-list-item, .article-list-item-span {
+font-size: 1.09em;
+line-height: normal;
+font-weight: bold;
+}
+.home-article-heading, .article-heading {}
+
+.home-article-image, .article-image {
+margin-bottom:9px;
+}
+.home-article-subheading, .article-subheading {}
+.home-article-item, .article-item {}
+
+span.home-article-list-item-span {
+  width:50%;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  display: block;
+  float:left;
+}
+span.home-article-list-item-span.a {}
+span.home-article-list-item-span.b {}
+
+.home-large-image{
+  margin-bottom:9px;
+}
+
+/* Note: Design for a width of 768px, Gutter: 20px, Unit: 44px */ 
+@media only screen and (min-width: 768px) and (max-width: 977px) {
+.grid_4.medium_grid_12 {
+  width:100%;
+}
+.grid_4.medium_grid_6 {
+  width:364px;  /*  .container_12 .grid_6*/
+}
+.home-article-border {
+  width:748px;
+}
+}
+
+/* Footer */
+
+.footer .social-icons {
+
+}
+
+/*
+ Is this too much or better? */
+
+.float-me.right-big,
+.float-me.right-medium,
+.float-me.right-small {
+  float:right;
+}
+.float-me.left-big,
+.float-me.left-medium,
+.float-me.left-small {
+  float:left;
+}
+
+@media only screen and (min-width: 0px) and (max-width:  768px) {
+.float-me.right-big.small-left{
+  float:left;
+}
+}
+/* Footer */
+
+.footer-bottom-block {
+  margin-bottom:18px;
+}
+#footer .footer-wrapper {
+background-color: #f2f2f2;
+padding: 0;
+padding-bottom: 18px;
+}
+
+article.footer-store-address {
+}
+address.footer-store-address-item {
+}
+#footer address {
+float: left;
+color: #333;
+display: block;
+width: 100%;
+}
+
+article.footer-social-icons {
+  margin-top: 18px;
+}
+article.footer-social-icons a{
+  font-size: 0;
+  width:51px;
+  height:50px;
+  background: #ccc;
+  display:block;
+  float: left;
+  margin-left:9px;
+}
+@media only screen and (min-width: 0px) and (max-width:  768px) {
+.float-me.right-big.small-left .footer-social-icons a{
+  margin-left:0;
+  margin-right:9px;
+}
+a.footer-social-icons.social-icon.facebook51x50gif {
+  background:url(images/social.icon.grey.facebook51x50.gif);
+}
+a.footer-social-icons.social-icon.gmail51x50gif{
+  background:url(images/social.icon.grey.gmail51x50.gif);
+}
+a.footer-social-icons.social-icon.twitter51x50gif{
+  background:url(images/social.icon.grey.twitter51x50.gif);
+}
+
+
+/* Section Dividers */
+.article-heading-border {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  margin-left:9px;
+  margin-right:9px;
+  border-top: 3px solid #333;
+}
+/*@media only screen and (min-width: 0px) and (max-width: 788px) {
+.article-heading-border {
+  margin-left:0px;
+  margin-right:0px;
+}*/
+.section-border-medium {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  margin-left:0px;
+  margin-right:0px;
+  border-top: 3px solid #333;
+}
+}
+
+.home-article-heading {
+  font-size:1.09em;
+  line-height:1.09em;
+
+}
+
+.hues {
+  float:right;
+}
+.hue {
+  display:block;
+  width:51px;
+  height:50px;
+  float:left;
+}
+.hue.red {
+  background:red;
+}
+.hue.green {
+  background:green;
+}
+.hue.blue {
+  background:blue;
+}
+
+.actions {
+  float:left;
+}
+.action {
+  color:#f1f1f1;
+  display:block;
+  /*width:51px;*/
+  padding:5px;
+  box-sizing:border-box;
+  height:50px;
+  float:left;
+}
+.action.move-left {
+  background:#888;
+}
+.action.move-right {
+  background:#666;
+}
+.action.move-up {
+  background:#444;
+}
+.action.move-down {
+  background:#222;
+}
+
+
+.canvas-module {
+  width:600px;
+  height:450px;
+  background:#ccc;
+}
+
+.room-001.action-default {
+  width:600px;
+  height:450px;
+  background:url('../images/room-001/room-001.jpg') black;
+}
+
+ul.top-level-ul {
+  margin-bottom:18px;
+}
+
+
+
+/*/// game items*/
+
+.item {
+  width:50px;
+  height:50px;
+  background:orange;
+}
+/* limit clicks per difficulty setting */
+.click {
+  width:50px;
+  height:50px;
+  background:pink;
+}
+
+

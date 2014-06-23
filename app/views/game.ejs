@@ -13,87 +13,176 @@
   <link rel="stylesheet" href="css/bootstrap.min.css"><!-- load bootstrap -->
   <link rel="stylesheet" href="css/style.css"><!-- load bootstrap -->
   <link rel="stylesheet" href="css/font-awesome-4.1.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/flexslider.css">
+  <link rel="stylesheet" type="text/css" href="css/grid.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/typography.css">
 
   <!-- SPELLS -->
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <!-- // <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+  <script src="libs/jquery-1.10.2.js"></script>
   <!--script src="libs/angular.min.js"></script-->
+  <!-- // <script src="libs/jquery.flexslider.js"></script> -->
   <script src="libs/angular-1.2.16.js"></script>
-  <!--script src="libs/angular-ui-router.min.js"></script> -->
-  <script src="libs/angular-ui-router-0.2.10.js"></script>
+  <script src="libs/angular-ui-router.min.js"></script> 
+  <!-- // <script src="libs/angular-ui-router-0.2.10.js"></script> -->
+  <!-- // <script src="libs/angular-flexslider.js"></script> -->
 
   <!-- // <script src="js/controllers/main.js"></script> <!-- load up our controller -->
-  <!-- // <script src="js/controllers/statusController.js"></script> <!-- load up our controller -->
-  <script src="js/controllers/level001/level001Controller.js"></script>
+  <!-- // <script src="js/controllers/status/escapeStatusController.js"></script> <!-- load up our controller --> 
+  <!-- // <script src="js/controllers/level001/level001Controller.js"></script> -->
   <!-- // <script src="js/services/todos.js"></script> <!-- load our todo service  -->
   <script src="js/core.js"></script> <!-- load our main application -->
 
+
 </head>
-<!-- SET THE CONTROLLER -->
-<!-- NAVIGATION -->
-<body><base href="/">
+<body ng-app="escapeApp">
 
-<!-- MAIN CONTENT -->
-<div class="container" ng-app="escapeApp">
-  <div class="row" ng-controller="level001Controller">
-    <div class="col-sm-4"> 
-      <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-            Escape from Samsara<!-- <a class="navbar-brand" ui-sref="#">Escape from Samsara</a> -->
+<div class="content-wrapper">
+  <div class="container_12">
+        <div class="main-container">
+            <div class="container_12">
+              <div class="grid_4">
+              <article class="newsmodule3" ng-controller="healthController">
+                <h3 class="newsmodule-header home-article-heading">Health</h3>
+                <ul class="top-level-ul">
+                  <li  ng-repeat="health in healths" class="health {{health.class}}">{{health.name}}<span>: {{health.value}}</span></li>
+                  touch
+                </ul>
+              </article>
+              <article class="newsmodule3" ng-controller="gameBoardController">
+                <h3 class="newsmodule-header home-article-heading">Actions</h3>
+                <ul class="top-level-ul" >
+                  <li><a ui-sref="work">Do some work.</a></li> 
+                  <li><a ui-sref="exercise">Do some exercise.</a></li> 
+                  <li><a ui-sref="getup">Get up.</a></li> 
+                </ul>
+                <div class="ui-view">
+
+                </div>
+                  <!-- <li><a ui-sref="consume">Watch some tv.</a></li> -->
+              </article>
+              </div>
+              <div class="grid_8">
+              <article class="canvas-module" ng-controller="gameBoardController">
+                <div class="room-001 action-default" />
+                  <h1>{{information}}</h1>
+                  <a href="#" class="findaplant click">Find a plant.</a>
+                  <a href="#" class="stopforsmoke click">Stop for smoke.</a>
+                  <a href="#" class="hitawall click">Hit a wall.</a>
+                  <div class="item plant">Plant</div><!-- switching between langauges helps you think -->
+                  <script>
+                    $(function(){ // Loads javascript after page 
+
+// var findaplant = function(input){ // accepts a plant
+  $('.findaplant').on('click', function(){
+    alert('you found a'+fireflower);
+    // pollon++
+  });
+// }
+
+findaplant('fireflower'); //stopforsmoke('function');
+// var stopforsmoke = function(input){ // accepts a class
+//   $(input).on('click', function(){
+//     alert('you smoke some hash');
+//     // show screenshot animation
+//     // pollon--
+//     // health++
+//   });
+// }
+
+// var hitwall = function(input){
+//   $(input).on('click', function(){
+//     alert('you have hit a wall');
+//     // health--
+//     // winning hit a wall gets you a fireflower
+
+//   });
+// }
+
+
+}
+
+
+                  </script>
+                </div>
+              </article>
+              </div>
+              <div class="grid_12">
+              <article class="introduction-module" ng-controller="actionsController">
+                <h2 class="home-article-heading">{{information}}</h2>
+                <!-- <div class="article-heading-border"></div> -->
+                <!-- <p class="home-article-item">You wake up from a dream. Your in a strange place and you want to get home.</p> -->
+                <ul ng-repeat="action in actions" class="actions">
+                  <li class="action {{action.class}}">{{action.name}}</li>
+                </ul>
+                <ul ng-repeat="hue in hues" class="hues">
+                  <li class="hue {{hue}}">{{hue}}</li>
+                </ul>
+
+                <div class="article-heading-border"></div>
+              </article>
+              </div>
+            </div>
+
+            <div class="container_12">
+            <section class="newsmodules">
+
+                <div class="grid_4 medium_grid_6">
+                <article class="newsmodule1" ng-controller="plotController">
+                  <h3 class="newsmodule-header home-article-heading">Newsmodul 1</h3>
+                  <img class="article-image" src="http://placehold.it/630x240"/>
+                  <h4 class="home-article-subheading">{{information}}</h4>
+                  <p class="home-article-item">Nicht in jedem Jahr erlaubt es uns die Natur eine vollreife Spatlese aus unseren Weissburgunder-Weinbergen zu erten. 2012 war wirder ein solcher Jahrgang: am 11. Oktober brachte uns die fruhmorgendliche Lese kerngesunde Trauben mit knapp 100 Grad Oechsle in unseren Betrieb.</p>
+                </article>
+                </div>
+                <div class="grid_4 medium_grid_6">
+                <article class="newsmodule2" ng-controller="itemsController">
+                  <h3 class="newsmodule-header home-article-heading">Newsmodul 2</h3>
+                  <img  class="article-image" src="http://placehold.it/630x240"/>
+                  <h4 class="home-article-subheading">{{information}}</h4>
+                    <ul>
+                        <li ng-repeat="status in statuses">
+                          <span>{{ status.name }}</span>{{ status.price}}
+                        </li>
+                    </ul>
+
+                </div> 
+                <div class="grid_4 medium_grid_6">
+                  <div class="section-border-medium"></div>
+                  <h3 class="newsmodule-header home-article-heading">Newsmodul 2</h3>
+                  <img  class="article-image" src="http://placehold.it/630x240"/>
+                </div>
+            </section>
+            </div>
+            <div class="clear"></div>
+        </div>    
+    </div>
+</div>
+<footer id="footer">
+  <div class="footer-wrapper">
+    <div class="container_12">
+      <div class="grid_12">
+        <div class="footer-bottom-block">
+          <div class="float-me left-big">
+          <article class="footer-store-address">
+            <address class="footer-store-address-item">An Address, Anywhere</address>
+            <address class="footer-store-address-item">Telefon: 072-763-415</address>
+            <address class="footer-store-address-item">E-Mail: adhira.vhriddi@gmail.com</address>
+          </article>
+          </div>
+          <div class="float-me right-big small-left">
+          <article class="footer-social-icons">
+            <a href="#" class="footer-social-icon facebook51x50gif" alt="facebook">Facebook</a>
+            <a href="#" class="gmail51x50gif" alt="gmail">Gmail</a>
+            <a href="#" class="footer-social-icon" alt="twitter">Twitter</a>
+          </article>
+          </div>
         </div>
-        <ul class="nav navbar-nav">
-            <!-- <li><a ui-sref="home">Home</a></li> -->
-            <!-- <li><a ui-sref="about">About</a></li> -->
-        </ul>
-      </nav>
-
-      <section >
-        <article > <!-- to what is extent is it more semantic to use article for ng items and keep the div tag purely presentaion -/ -->
-        <nav></ul>
-          <li><a ui-sref="smoke">Smoke some pot.</a></li> 
-          <li><a ui-sref="eat">Look in kitchen</a></li>
-          <li><a ui-sref="consume">Watch some tv.</a></li>
-        </nav></ul>
-      </section>
-    </div>
-    <div class="col-sm-8">
-        <section ui-view>
-
-        </section>
-            {{dostuff}}
-
-        </article>
-    </div>
-
-</div>
-    </div><!-- end ng-app="escapeApp" -->
-   
-  <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== 
-  you use possesions to adjust your health. 
-  you obtain possesions in mini games
-  you need your health to complete puzzles
-
-  puzzle1 
-    you have .02g cannabis. papers. a laptop. 1 ciggarette
-    you must survive the world cup
-    there are four people in the room
-    
-    you must mix two cigarettes. take a vote about whether to smoke at once or in two joint
-      if you smoke it all in one joint you cant work [money:null, weed:-.01, self-esteem:-1]
-
-
-  Your itenery is a model that will demonstate crud principles
-
-  Each level will have it's own controller and all level's will be routed via a level controller. 
-
-  Each level will then have is own angular.ui state controller, which will route the user to a number
-  of mini games and plot development options.
-
-  In level one the player will learn to add items to ver itenery. 
-
-  The object of each level is to repay your hotel bill so you can escape to the next destination. At the end of each level you be able to unlock a bonus
-  alternative ending where you redectorate the room. 
-
-  ========================================================================== -->
-</div>
+      </div>
+      <div class="clear"></div>
+    </div> 
+  </div>
+</footer>
 </body>
 </html>

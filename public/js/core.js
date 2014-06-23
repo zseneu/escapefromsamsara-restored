@@ -1,45 +1,132 @@
-var escapeApp = angular.module('escapeApp', ['ui.router','level001Controller']);
-// angular.module('scotchTodo', []);
-escapeApp.config(function($stateProvider, $urlRouterProvider, $uiViewScrollProvider,$anchorScrollProvider) {
-    
-    $urlRouterProvider.otherwise('/level');
+var escapeApp = angular.module('escapeApp', ['ui.router', 'mainController']);
+
+angular.module('mainController', [
+  'gameBoardController' ,
+  'actionsController',
+  'plotController',
+  'itemsController',
+  'healthController'
+  ]).controller('mainController', function($scope, $http) {
+});
+
+angular.module('actionsController', ['moveLeftController']).controller('actionsController', function($scope) {
+    $scope.information = 'this will hold the controls to interact with with the gameBoardController';
+    $scope.actions = [
+      {
+      "name" : 'Move Left',
+      "class" : 'move-left',
+      "function":'moveLeft'
+      },
+            {
+      "name" : 'Move Right',
+      "class" : 'move-right',
+      "function":'leftRight'
+      },
+            {
+      "name" : 'Move Up',
+      "class" : 'move-up',
+      "function":'moveUp'
+      },
+            {
+      "name" : 'Move Down',
+      "class" : 'move-down',
+      "function":'moveDown'
+      },
+    ];
+    $scope.hues = ['red','green','blue'];
+});
+angular.module('moveLeftController', []).controller('moveLeftController', function($scope) {
+
+});
+
+angular.module('plotController', []).controller('plotController', function($scope) {
+    $scope.information = 'this will contain additional plot interactivity';
+});
+angular.module('itemsController', []).controller('itemsController', function($scope) {
+   
+    $scope.information = 'this will contain the items you have collected';
+  
+});
+angular.module('healthController', []).controller('healthController', function($scope) {
+   
+    $scope.information = 'this will contain health info';
+    $scope.healths = [
+      {
+      "name" : 'juice',
+      "class" : 'health-juice',
+      "value" : '10'
+      },
+            {
+      "name" : 'pollon',
+      "class" : 'health-pollon',
+      "value":'10'
+      },
+            {
+      "name" : 'strength',
+      "class" : 'health-strength',
+      "value" : '10'
+      },
+    ];
+});
+
+var gameBoardController = angular.module('gameBoardController', ['ui.router']).controller('gameBoardController', function($scope) {
+    $scope.information = "You wake up. You're too weak to get out of bed";
+    $scope.actions = [
+      {
+      "name" : 'default',
+      "class" : 'action-default',
+      },
+            {
+      "name" : 'exercise',
+      "class" : 'action-exercise',
+      }
+    ];
+});
+
+
+
+gameBoardController.config(function($stateProvider, $urlRouterProvider, $uiViewScrollProvider,$anchorScrollProvider) {
+    $urlRouterProvider.otherwise('/smoke');
     $uiViewScrollProvider.useAnchorScroll();
     $anchorScrollProvider.disableAutoScrolling();
 
-    $stateProvider
-    .state('eat', {
-        url: '/eat',
-        templateUrl: '/views/level001/eat/lookinkitchen.html', // this can be in injected with a variable later 
-    })
-    .state('consume', {
-        url: '/consume',
-        templateUrl: '/views/level001/consume/watchsometv.html', // this can be in injected with a variable later 
-        controller: 'watchsometvController',
-    })
-    .state('smoke', {
-        url: '/smoke',
-        templateUrl: '/views/level001/smoke/smokesomepot.html', // this can be in injected with a variable later 
-        controller: 'smokesomepotController',
-    })
-    .state('smoke.some', {
-        url: '/some',
-        // templateUrl: '/views/level001/consume/watchsometv.html',
-        controller: 'smokeCtrl',
-        controller: function($scope) {
-            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-        }
-    });
-
-  // // nested list with just some random string data
-  //   .state('smoke.mescaline', {
-  //       url: '/eat',
-  //       template: 'I could sure use a drink right now.'
-  //   })
-  //   .state('smoke.tobacco', {
-  //       url: '/eat',
-  //       template: 'I could sure use a drink right now.'
-  //   });
+  $stateProvider
+    .state('work', {
+      url: '/work',
+      templateUrl: '/views/level-001/work.html', // this can be in injected with a variable later 
+        // controller: 'smokesomepotController',
+  })
+  .state('exercise', {
+      url: '/exercise',
+      templateUrl: '/views/level-001/exercise.html', // this can be in injected with a variable later 
+        // controller: 'smokesomepotController',
+  })
+  .state('getup', {
+      url: '/getup',
+      templateUrl: '/views/level-001/getup.html', // this can be in injected with a variable later 
+        // controller: 'smokesomepotController',
+  });
 });
+// )};
+//     .state('smoke.some', {
+//         url: '/some',
+//         // templateUrl: '/views/level001/consume/watchsometv.html',
+//         controller: 'smokeCtrl',
+//         controller: function($scope) {
+//             $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
+//         }
+//     });
+
+//   // // nested list with just some random string data
+//   //   .state('smoke.mescaline', {
+//   //       url: '/eat',
+//   //       template: 'I could sure use a drink right now.'
+//   //   })
+//   //   .state('smoke.tobacco', {
+//   //       url: '/eat',
+//   //       template: 'I could sure use a drink right now.'
+//   //   });
+// });
 
 //         // // nested list with just some random string data
 //         // .state('home.paragraph', {

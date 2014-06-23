@@ -8,7 +8,7 @@ var mailer   = require('express-mailer');
 var passport = require('passport');
 var flash    = require('connect-flash');
 // configuration ===============================================================
-mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
+// mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
 
 require('./config/passport')(passport); // pass passport for configuration
 

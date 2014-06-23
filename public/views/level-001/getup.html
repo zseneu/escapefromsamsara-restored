@@ -1,0 +1,27 @@
+This may well be reality, but you're too weak to get out of bed.
+
+Turns out most of my karma seems to be about trust issues. 
+
+If you would like to sign up for future updates about this game, please enter your email address below.
+
+<input type="text" id="firstName" ng-model="myForm.firstName">
+
+<div ng-controller="MyController" >
+    <form>
+        <input type="text" name="firstName" ng-model="myForm.firstName"> First name <br/>
+        <input type="text" name="lastName"  ng-model="myForm.lastName"> Last name <br/>
+    </form>
+
+    <div>
+        {{myForm.firstName}} {{myForm.lastName}}
+    </div>
+</div>
+
+<script>
+    angular.module("myapp", [])
+            .controller("MyController", function($scope) {
+                $scope.myForm = {};
+                $scope.myForm.firstName = "Jakob";
+                $scope.myForm.lastName  = "Jenkov";
+            } );
+</script>
