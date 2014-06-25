@@ -71,7 +71,7 @@ var healthController = angular.module('healthController', []).controller('health
     ];
 });
 
-var gameBoardController = angular.module('gameBoardController', ['ui.router']).controller('gameBoardController', function($scope) {
+var gameBoardController = angular.module('gameBoardController', ['ui.router', 'makeFoodController']).controller('gameBoardController', function($scope) {
     $scope.information = "You wake up. You're too weak to get out of bed";
     $scope.actions = [
       {
@@ -83,6 +83,17 @@ var gameBoardController = angular.module('gameBoardController', ['ui.router']).c
       "class" : 'action-exercise',
       }
     ];
+    $scope.findaplant = function(){
+      healthController.information = "you find a plant with a controller"; // you can get as involved as you like, even learn to build your own levels on bitbucket
+    } // remember that angular overrides links and buttons are better
+    // angular models are controller specific and do not relate to api models?
+
+    $scope.recipe = [ 'Castravet','Legume Picant','Chappa','Salata','ketchup','chiabata'];
+
+});
+var makeFoodController = angular.module('makeFoodController', []).controller('makeFoodController', function($scope) {
+    $scope.information = "You wake up. You're too weak to get out of bed";
+    // When you shop, you can purchase new items found in your sandwiches
     $scope.findaplant = function(){
       healthController.information = "you find a plant with a controller";
     } // remember that angular overrides links and buttons are better

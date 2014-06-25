@@ -246,9 +246,10 @@ a.footer-social-icons.social-icon.twitter51x50gif{
 
 
 .canvas-module {
-  width:600px;
+  width:757px;
   height:450px;
   background:#ccc;
+  overflow: hidden;
 }
 
 .room-001.action-default {
@@ -281,7 +282,8 @@ ul.top-level-ul {
 
 .efs_exercise {
   background:url('../images/title-page/go-to-the-kitchen.png') black;
-  width:757px;
+    width:757px;
+  height:450px;
   display: block;
 }
 
