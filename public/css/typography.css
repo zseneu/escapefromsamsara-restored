@@ -277,4 +277,12 @@ ul.top-level-ul {
   background:pink;
 }
 
+/*/// kitchen items*/
+
+.efs_exercise {
+  background:url('../images/title-page/go-to-the-kitchen.png') black;
+  height:757px;
+  display: block;
+}
+
 

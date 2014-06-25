@@ -65,6 +65,9 @@
               </div>
               <div class="grid_8">
               <article class="canvas-module" ng-controller="gameBoardController">
+                <div class="ui-view">
+
+
                 <div class="room-001 action-default" />
                   <h1 ng-model="information">{{information}}</h1>
                   <button class="findaplant click">Find a plant.</button>
@@ -75,6 +78,7 @@
     <p ng-show="false">This paragraph is hidden.</p> 
     <p>i think a click handler can have its own controller</p>
 <button ng-click="findaplant()">find a plant with a controller</button>
+                </div>
 
 
                   <script>
@@ -139,7 +143,7 @@
                   <h3 class="newsmodule-header home-article-heading">Newsmodul 1</h3>
                   <img class="article-image" src="http://placehold.it/630x240"/>
                   <h4 class="home-article-subheading">{{information}}</h4>
-                  <p class="home-article-item">Nicht in jedem Jahr erlaubt es uns die Natur eine vollreife Spatlese aus unseren Weissburgunder-Weinbergen zu erten. 2012 war wirder ein solcher Jahrgang: am 11. Oktober brachte uns die fruhmorgendliche Lese kerngesunde Trauben mit knapp 100 Grad Oechsle in unseren Betrieb.</p>
+                  
                 </article>
                 </div>
                 <div class="grid_4 medium_grid_6">
