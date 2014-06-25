@@ -71,7 +71,7 @@ var healthController = angular.module('healthController', []).controller('health
     ];
 });
 
-var gameBoardController = angular.module('gameBoardController', ['ui.router', 'makeFoodController']).controller('gameBoardController', function($scope) {
+var gameBoardController = angular.module('gameBoardController', ['ui.router', 'makeFoodController','doworkController']).controller('gameBoardController', function($scope) {
     $scope.information = "You wake up. You're too weak to get out of bed";
     $scope.actions = [
       {
@@ -88,14 +88,26 @@ var gameBoardController = angular.module('gameBoardController', ['ui.router', 'm
     } // remember that angular overrides links and buttons are better
     // angular models are controller specific and do not relate to api models?
 
-    $scope.recipe = [ 'Castravet','Legume Picant','Chappa','Salata','ketchup','chiabata'];
 
 });
 var makeFoodController = angular.module('makeFoodController', []).controller('makeFoodController', function($scope) {
+    $scope.recipe = [ 'Castravet','Legume Picant','Chappa','Salata','ketchup','chiabata'];
     $scope.information = "You wake up. You're too weak to get out of bed";
     // When you shop, you can purchase new items found in your sandwiches
-    $scope.findaplant = function(){
-      healthController.information = "you find a plant with a controller";
+    $scope.pickup = function(){
+      alert('you picked up a sandwich');
+      healthController.information = "you find pick up a sandwich with a controller";
+    } // remember that angular overrides links and buttons are better
+    // angular models are controller specific and do not relate to api models?
+
+
+});
+var doworkController = angular.module('doworkController', []).controller('doworkController', function($scope) {
+    $scope.info = "You do some work";
+    // When you shop, you can purchase new items found in your sandwiches
+    $scope.pickup = function(){
+      alert('you picked up a sandwich');
+      healthController.information = "you find pick up a sandwich with a controller";
     } // remember that angular overrides links and buttons are better
     // angular models are controller specific and do not relate to api models?
 
@@ -113,7 +125,7 @@ gameBoardController.config(function($stateProvider, $urlRouterProvider, $uiViewS
     .state('work', {
       url: '/work',
       templateUrl: '/views/level-001/work.html', // this can be in injected with a variable later 
-        // controller: 'smokesomepotController',
+        controller: 'doworkController',
   })
   .state('exercise', {
       url: '/exercise',

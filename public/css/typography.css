@@ -286,5 +286,12 @@ ul.top-level-ul {
   height:450px;
   display: block;
 }
+.efs_enteryourname {
+  background:url('../images/title-page/please-enter-your-name.png') black;
+    width:757px;
+  height:450px;
+  display: block;
+}
+
 
 

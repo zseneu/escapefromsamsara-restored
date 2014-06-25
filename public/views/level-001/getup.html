@@ -1,22 +1,55 @@
-
-<input type="text" id="firstName" ng-model="myForm.firstName">
-
-<div ng-controller="MyController" >
-    <form>
-        <input type="text" name="firstName" ng-model="myForm.firstName"> First name <br/>
-        <input type="text" name="lastName"  ng-model="myForm.lastName"> Last name <br/>
-    </form>
-
-    <div>
-        {{myForm.firstName}} {{myForm.lastName}}
-    </div>
+<div ng-controller="ControllerZero">
+    <input ng-model="message" >
+    http://stackoverflow.com/questions/16709373/angularjs-how-to-call-controller-function-from-outside-of-controller-component
+    <button ng-click="handleClick(message);">LOG</button>
 </div>
 
+<div ng-controller="ControllerOne">
+    <input ng-model="message" >
+</div>
+
+<div ng-controller="ControllerTwo">
+    <input ng-model="message" >
+</div>
+
+
 <script>
-    angular.module("myapp", [])
-            .controller("MyController", function($scope) {
-                $scope.myForm = {};
-                $scope.myForm.firstName = "Jakob";
-                $scope.myForm.lastName  = "Jenkov";
-            } );
+escapeApp.factory('mySharedService', function($rootScope) {
+    var sharedService = {};
+    
+    sharedService.message = '';
+
+    sharedService.prepForBroadcast = function(msg) {
+        this.message = msg;
+        this.broadcastItem();
+    };
+
+    sharedService.broadcastItem = function() {
+        $rootScope.$broadcast('handleBroadcast');
+    };
+
+    return sharedService;
+});
+
+function ControllerZero($scope, mySharedService) {
+    $scope.handleClick = function(msg) {
+        mySharedService.prepForBroadcast(msg);
+    };
+        
+    $scope.$on('handleBroadcast', function() {
+        $scope.message = mySharedService.message;
+    });        
+}
+
+function ControllerOne($scope, mySharedService) {
+    $scope.$on('handleBroadcast', function() {
+        $scope.message = 'ONE: ' + mySharedService.message;
+    });        
+}
+
+function ControllerTwo($scope, mySharedService) {
+    $scope.$on('handleBroadcast', function() {
+        $scope.message = 'TWO: ' + mySharedService.message;
+    });
+}
 </script>
