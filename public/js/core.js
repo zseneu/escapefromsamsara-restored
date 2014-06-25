@@ -1,4 +1,4 @@
-var escapeApp = angular.module('escapeApp', ['ui.router', 'mainController']);
+var escapeApp = angular.module('escapeApp', ['ui.router', 'mainController', 'doworkController']);
 
 angular.module('mainController', [
   'gameBoardController' ,
@@ -103,13 +103,49 @@ var makeFoodController = angular.module('makeFoodController', []).controller('ma
 
 });
 var doworkController = angular.module('doworkController', []).controller('doworkController', function($scope) {
-    $scope.info = "You do some work";
+    $scope.doworkinfo = "You do some work";
     // When you shop, you can purchase new items found in your sandwiches
-    $scope.pickup = function(){
-      alert('you picked up a sandwich');
-      healthController.information = "you find pick up a sandwich with a controller";
-    } // remember that angular overrides links and buttons are better
-    // angular models are controller specific and do not relate to api models?
+    $scope.dostuff = function(){
+      var something = $scope.formData.name;
+      var foourl = '/formhandler/'+something;
+    $http.get(foourl)
+    .success(function(data) {
+      // $scope.todos = data;
+      if(data.answer == 'correct'){
+        $('#level001-watchsometv').html("<img src='"+data.url+"'/>");
+
+      } else {
+        $scope.books.push(data.attempt);
+        alert(data.attempt);
+      }
+    })
+    .error(function(data) {
+      console.log('Error: ' + data);
+    });
+  }
+
+    $scope.submitForm = function() {
+      var something = $scope.formData.name;
+      var foourl = '/formhandler/'+something;
+      $http({
+          method  : 'GET',
+          url     : foourl,
+          data    : $.param($scope.formData),  // pass in data as strings
+          headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+      })
+      .success(function(data) {
+          console.log(data);
+
+          if (!data.success) {
+            // if not successful, bind errors to error variables
+              $scope.errorName = data.errors.name;
+              $scope.errorSuperhero = data.errors.superheroAlias;
+          } else {
+            // if successful, bind success message to message
+              $scope.message = data.message;
+          }
+      });
+    }
 
 
 });

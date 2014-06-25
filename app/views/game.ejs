@@ -30,9 +30,9 @@
 
   <!-- // <script src="js/controllers/main.js"></script> <!-- load up our controller -->
   <!-- // <script src="js/controllers/status/escapeStatusController.js"></script> <!-- load up our controller --> 
-  <!-- // <script src="js/controllers/level001/level001Controller.js"></script> -->
   <!-- // <script src="js/services/todos.js"></script> <!-- load our todo service  -->
   <script src="js/core.js"></script> <!-- load our main application -->
+  <!-- // <script src="js/controllers/level001/level001Controller.js"></script> -->
 
 
 </head>
@@ -57,11 +57,13 @@
                   <li><a ui-sref="exercise">Do some exercise.</a></li> 
                   <li><a ui-sref="getup">Get up.</a></li> 
                 </ul>
-                <div class="ui-view">
-
-                </div>
-                  <!-- <li><a ui-sref="consume">Watch some tv.</a></li> -->
+               <!--  <div ng-controller="doworkController">
+                    {{info}}
+                </div>   -->                
               </article>
+                <!-- <div class="ui-view"> -->
+                <!-- </div> -->
+                  <!-- <li><a ui-sref="consume">Watch some tv.</a></li> -->
               </div>
               <div class="grid_8">
               <article class="canvas-module" ng-controller="gameBoardController">
