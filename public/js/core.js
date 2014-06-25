@@ -84,7 +84,7 @@ var gameBoardController = angular.module('gameBoardController', ['ui.router']).c
       }
     ];
     $scope.findaplant = function(){
-      $scope.information = "you find a plant with a controller";
+      healthController.information = "you find a plant with a controller";
     } // remember that angular overrides links and buttons are better
     // angular models are controller specific and do not relate to api models?
 

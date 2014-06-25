@@ -45,9 +45,9 @@
               <div class="grid_4">
               <article class="newsmodule3" ng-controller="healthController">
                 <h3 class="newsmodule-header home-article-heading">Health</h3>
+                {{information}}
                 <ul class="top-level-ul">
                   <li  ng-repeat="health in healths" class="health {{health.class}}">{{health.name}}<span>: {{health.value}}</span></li>
-                  touch
                 </ul>
               </article>
               <article class="newsmodule3" ng-controller="gameBoardController">
